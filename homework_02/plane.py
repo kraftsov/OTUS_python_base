@@ -1,14 +1,3 @@
-"""
-1. Создайте класс `Plane`, наследник `Vehicle`.
-2. Добавьте атрибуты cargo и max_cargo классу Plane.
-3. Добавьте max_cargo в инициализатор (переопределите родительский).
-4. Объявите метод load_cargo, который принимает число, проверяет, что в сумме
-с текущим cargo не будет перегруза, и обновляет значение.
-В ином случае выкидывает исключение exceptions.CargoOverload.
-5. Объявите метод remove_all_cargo, который обнуляет значение cargo
-и возвращает прежнее. То, которое было до обнуления.
-"""
-
 from homework_02.base import Vehicle
 from homework_02.exceptions import CargoOverload
 

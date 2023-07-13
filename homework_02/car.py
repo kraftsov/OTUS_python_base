@@ -1,9 +1,3 @@
-"""
-Создайте класс `Car`, наследник `Vehicle`
-Добавьте атрибут engine классу Car. Объявите метод set_engine,
-который принимает в себя экземпляр объекта Engine и устанавливает
-на текущий экземпляр Car
-"""
 from homework_02.engine import Engine
 from homework_02.base import Vehicle
 

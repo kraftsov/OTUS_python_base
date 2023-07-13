@@ -1,8 +1,3 @@
-'''доработайте базовый класс base.Vehicle:
-добавьте атрибуты weight, started, fuel, fuel_consumption со значениями
-по умолчанию
-добавьте инициализатор для установки weight, fuel, fuel_consumption'''
-
 from abc import ABC
 from homework_02.exceptions import LowFuelError, NotEnoughFuel
 
@@ -19,9 +14,7 @@ class Vehicle(ABC):
         return f'{self.__dict__}'
 
     def start(self):
-        """ Метод start. При вызове этого метода необходимо проверить состояние started.
-        И если не started, то нужно проверить, что топлива больше нуля, и обновить состояние started,
-        иначе нужно выкинуть исключение exceptions.LowFuelError """
+
         if self.started is False:
             if self.fuel > 0:
                 print('Топливо есть еще!')
@@ -31,9 +24,6 @@ class Vehicle(ABC):
                 raise LowFuelError
 
     def move(self, distance):
-        """ Метод move проверяет, что топлива достаточно для преодоления переданной дистанции
-         (вплоть до полного расхода), и изменяет количество оставшегося топлива,
-         иначе выкидывает исключение exceptions.NotEnoughFuel """
         if distance <= (self.fuel // self.fuel_consumption):
             print(f'Топлива проехать {distance}км хватит')
             self.fuel = self.fuel - distance * self.fuel_consumption
