@@ -8,6 +8,3 @@ class Car(Vehicle):
     def set_engine(self, engine):
         if isinstance(engine, Engine):
             self.engine = engine
-
-# car_zapor = Car()
-
