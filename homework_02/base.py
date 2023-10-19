@@ -14,7 +14,6 @@ class Vehicle(ABC):
         return f'{self.__dict__}'
 
     def start(self):
-
         if self.started is False:
             if self.fuel > 0:
                 print('Топливо есть еще!')
