@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+  pg:
+    container_name: pg_homework4
+    image: postgres
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      PGDATA: /var/lib/postgresql/data/
+    ports:
+      - "5430:5432"
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data/
+
+  adminer:
+    image: adminer
+    ports:
+      - "8080:8080"
+
+  pgadmin:
+    container_name: pgadmin_homework4
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.org
+      PGADMIN_DEFAULT_PASSWORD: admin
+#      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    ports:
+      - "5050:80"
