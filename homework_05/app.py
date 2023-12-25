@@ -18,7 +18,6 @@ app = Flask(__name__)
 
 @app.route('/', endpoint='index')
 def index():
-    # return "Привет, Медвед!"
     return render_template('base.html')
 
 
