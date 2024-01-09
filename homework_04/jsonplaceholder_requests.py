@@ -29,9 +29,7 @@ async def common_fetch_json(url: str, column_names: list) -> list:
             for item in result:
                 # print(item)
                 filtered_user_data: dict = {
-                    key: value
-                    for key, value in item.items()
-                    if key in column_names
+                    key: value for key, value in item.items() if key in column_names
                 }
                 filtered_result.append(filtered_user_data)
             # print(filtered_result)
@@ -56,8 +54,8 @@ async def get_posts_list_from_url(
 
 # async def main():
 #     # result = await common_fetch_json(USERS_DATA_URL)
-#     result_users = await get_users_dict_from_url()
-#     result_posts = await get_posts_dict_from_url()
+#     result_users = await get_users_list_from_url()
+#     result_posts = await get_posts_list_from_url()
 #     print(result_users)
 #     print()
 #     print(result_posts)

@@ -1,0 +1,53 @@
+version: "3"
+
+services: # Сервисы
+  app:
+    build:
+      dockerfile: ./docker-build/Dockerfile
+      context: ./
+    ports:
+      - "5000:5000"
+    environment:
+      SQLALCHEMY_DATABASE_URI: postgresql+psycopg://postgres:postgres@pg:5432/postgres
+
+    volumes:
+      - ./src/templates:/app/templates
+
+    depends_on:
+      pg:
+        condition: service_healthy
+
+  pg:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "5412:5432"   # Обращение к 127.0.0.1:5412
+    volumes:
+      - ./db_data:/var/lib/postgresql/data/
+
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready" ]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  adminer:
+    image: adminer
+    ports:
+      - "8080:8080"
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.org
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    ports:
+      - "5050:80"  # WEB интерфейс localhost:5050
+
+volumes:
+  db-data:
