@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "my-django-blog"
+version = "0.1.0"
+description = ""
+authors = ["kraft <krafstov@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^5.0.1"
+django-debug-toolbar = "^4.2.0"
+
+
+
+[tool.poetry.group.dev.dependencies]
+appmap = "^1.18.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

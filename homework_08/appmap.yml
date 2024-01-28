@@ -1,0 +1,6 @@
+appmap_dir: tmp\appmap
+language: python
+name: my_django_blog
+packages:
+- path: settings
+- path: blog
