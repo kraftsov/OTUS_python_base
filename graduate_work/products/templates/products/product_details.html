@@ -1,0 +1,53 @@
+{% extends "products/base.html" %}
+{% load static %}
+
+{% block css %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/main.min.css' %}"/>
+{% endblock %}
+
+{% block title %}
+    {{ product.name }}
+{% endblock %}
+{% block content %}
+    <div class="product-detail">
+    </div>
+    {#-----Описание товара------#}
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                <div class="column is-6 is-offset-1">
+                    <figure class="image">
+                        <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
+                    </figure>
+                </div>
+                <div class="column is-4">
+                    <p class="title has-text-primary is-size-5-mobile">{{ product.name }}</p>
+                    <p class="is-size-5 is-size-6-mobile has-text-weight-bold">{{ product.price }} руб.</p>
+
+                    {% if product.quantity > 0 %}
+                        <p class="has-text-success is-size-6-mobile">Доступно к заказу</p>
+                    {% else %}
+                        <p class="has-text-danger is-size-6-mobile">Временно отсутствует</p>
+                    {% endif %}
+                    {##}
+                    <hr>
+                    <p class="is-size-6 is-size-7-mobile">Категория:
+                        <a href="{{ product.category.get_absolute_url }}">
+                            {{ product.category }}
+                        </a>
+                    </p>
+                    <hr/>
+                </div>
+
+                <div class="column is-12">
+                    <div class="divider has-text-primary">Описание</div>
+                    <p>{{ product.description | linebreaksbr }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    {#    #}
+{% endblock %}

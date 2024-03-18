@@ -1,0 +1,15 @@
+[
+  {
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+      "name": "GEPRC DoMain3.6 HD с O3 Air Unit и GPS (TBS)",
+      "image": "products_images/GEPRC-DoMain3.6-HD-O3-Air-Unit-GPS_s5ti-xw1_jpg.webp",
+      "description": "Этот комплект включает:\r\n1 × Переходник Ultra Power XT60 - Бананы (4 мм)\r\n1 × Зарядное устройство Ultra Power UP100AC Plus (Зарядное устройство)\r\n4 × Аккумулятор CNHL Black Series 1300mAh 6S 100C LiPo (XT60)\r\n1 × Пульт управления TBS Tango 2 Pro V4\r\n1 × FPV видео-очки DJI Goggles Integra\r\n1 × Квадрокоптер GEPRC DoMain3.6 HD с O3 Air Unit (С GPS, TBS)",
+      "short_description": "DoMain-это новое поколение потребительского беспилотного летател",
+      "price": "182191.00",
+      "quantity": 10,
+      "category": 3
+    }
+  }
+]
